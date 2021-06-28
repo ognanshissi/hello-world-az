@@ -9,3 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@main
+
+    - name: List content of the folder
+      run: ls
