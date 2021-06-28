@@ -1,0 +1,4 @@
+name: Build for deplpoiement
+on: [push]
+jobs:
+  runs-on: ubuntu-latest
