@@ -1,4 +1,11 @@
 name: Build for deplpoiement
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
-  runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@main
