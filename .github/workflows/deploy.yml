@@ -25,6 +25,6 @@ jobs:
       with:
         app-name: 'hello-world-az-delete'
         slot-name: 'production'
-        publish-profile: $
-        package: .
+        publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+        package: 'dist/hello-world-az'
 
