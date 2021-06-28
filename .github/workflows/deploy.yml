@@ -10,5 +10,22 @@ jobs:
     steps:
     - uses: actions/checkout@main
 
-    - name: List content of the folder
-      run: ls
+    - name: Set up Node.js version
+      uses: actions/set-up@v1
+      with:
+        node-version: '14.x'
+
+    - name: npm install, build and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+
+    - name: Deploy to Azure Web App
+      uses: actions/webapps-deploy@v2
+      with:
+        app-name: 'hello-world-az-delete'
+        slot-name: 'production'
+        publish-profile: $
+        package: .
+
